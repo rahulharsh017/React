@@ -109,16 +109,19 @@ try {
         config.appwriteBucketId,
         fileId
     )
+    return true
 } catch (error) {
     console.log("Appwrite :: Service :: Error",error);
+    return false
 }
     }
 
-    async deleteFile(fileId){
-        return this.bucket.getFilePreview(
-            config.appwriteBucketId
-        )
-    }
+   getFilePreview(fileId){
+    return this.bucket.getFilePreview(
+        config.appwriteBucketId,
+        fileId
+    )
+   }
 }
 
 
